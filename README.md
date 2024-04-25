@@ -6,7 +6,6 @@
  
  Règles de codage pricipales:
  - 1 .h par classe
- - 1 déclaration de fonction par .cpp
  - si je suis pas tout seul (ou meme comme ça) fork le main pour dev des fonctionnaités
  - Utilisation de CMake et Makefiles pour compiler parce que de toute façon je dois apprendre
  - Eviter des commit des trucs non fonctionnels ou le specifier dans le commit "Fix in Progress"
