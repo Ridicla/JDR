@@ -4,25 +4,26 @@ Fichier principal du projet
 */
 #include <stdio.h>
 #include <iostream>
-#include <.\lib\utils.h>
+#include "../lib/utils.h"
+#include "../lib/Player.h"
+
+int main()
+{   
+    Player player("Hero", 100, 50, 1);
+
+    std::cout << "Player health: " << player.getHealth() << std::endl;
+    player.setHealth(80);
+    std::cout << "Player health after taking damage: " << player.getHealth() << std::endl;
+
+    player.Levelup();
+    std::cout << "Player level after leveling up: " << player.getLevel() << std::endl;
 
 
-int main(int argc, char const *argv[])
-{
-
-   
-    // Creating a player object
-    Player player("Hero", 100, 10);
-
-    // Displaying player information
-    std::cout << "Player Information:" << std::endl;
-    player.displayInfo();
-
-    // Simulating player taking damage
-    std::cout << "\nPlayer took 30 damage." << std::endl;
-    std::cout << "Updated Player Information:" << std::endl;
-    player.displayInfo();
-
+    while (true)
+    {
+        /* code */
+    }
+    
     return 0;
 }
 

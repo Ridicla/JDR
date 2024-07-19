@@ -1,16 +1,25 @@
-CC = g++
-CFLAGS = -std=c++11
+# Compiler
+CXX = g++
 
-SRC_DIR = src
-BIN_DIR = bin
-LIB_DIR = lib
+# Compiler flags
+CXXFLAGS = -Wall -Wextra -Ilib
 
-SRCS = $(wildcard $(SRC_DIR)/*.cpp)
-EXEC = $(BIN_DIR)/JDR.exe
-LIBS = $(wildcard $(LIB_DIR)/*.h)
-$(EXEC): $(OBJS)
+# Source files (all .cpp files in src directory)
+SRC = $(wildcard src/*.cpp)
 
-	$(CC) $(CFLAGS) $(SRCS) $(LIBS) -o $(EXEC)
+# Executable name
+EXEC = ./Build/main
 
+# Default target
+all: $(EXEC)
+
+# Link and compile source files to create executable
+$(EXEC): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Clean target to remove the executable
 clean:
-	del /q bin\* 
+	rm -f $(EXEC)
+
+# Phony targets
+.PHONY: all clean

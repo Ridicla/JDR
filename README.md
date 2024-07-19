@@ -20,3 +20,5 @@
  - bin : binaires résultant de la compilation
  - lib : fichier .h
  - src : fichiers sources .cpp
+
+ utiliser Qt???

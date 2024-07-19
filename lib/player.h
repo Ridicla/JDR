@@ -1,49 +1,23 @@
-#include <utils.h>
+#include <Character.h>
 
-class Player {
+
+class Player : public Character
+{
 private:
-    std::string name;
-    int health;
-    
-    int defense;
-
+    int mLevel;
 public:
-    // Constructor
-    Player(const std::string& playerName, int playerHealth, int playerDefense)
-        : name(playerName), health(playerHealth),defense(playerDefense) {}
+    Player(const std::string &playerName, int playerHealth, int playerDefense, int playerLevel)
+        : Character(playerName, playerHealth, playerDefense), mLevel(playerLevel){};
+    ~Player();
 
-    // Destructor
-    ~Player() {}
+    void Levelup();
 
-    // Getters
-    std::string getName() const {
-        return name;
-    }
-    int getHealth() const {
-        return health;
-    }
-    int getDefense() const {
-        return defense;
-    }
+    //getters
 
-    // Setters 
-    void setName(const std::string& newName) {
-        name = newName;
-    }
-    void setHealth(int newHealth) {
-        health = newHealth;
-    }
-    void setDefense(int newDefense) {
-        defense = newDefense;
-    }
-
-    // Display (debuggers temporaire)
-    void displayInfo() const {
-        std::cout << "Name: " << name << std::endl;
-        std::cout << "Health: " << health << std::endl;
-        std::cout << "Defense: " << defense << std::endl;
-    }
+    int getLevel();
+    void setLevel(int newLevel);
 
 };
+
 
 
